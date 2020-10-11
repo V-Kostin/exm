@@ -36,7 +36,8 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
         _userInfo.email = userInfo[@"email"];
       }
       if (userInfo[@"avatar"] != NULL) {
-        _userInfo.avatar = [NSURL URLWithString:userInfo[@"avatar"]];
+        NSURL *url = [NSURL URLWithString:[userInfo[@"avatar"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+        _userInfo.avatar = url;
       }
     }
     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -60,7 +61,8 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
         _userInfo.email = userInfo[@"email"];
       }
       if (userInfo[@"avatar"] != NULL) {
-        _userInfo.avatar = [NSURL URLWithString:userInfo[@"avatar"]];
+        NSURL *url = [NSURL URLWithString:[userInfo[@"avatar"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+        _userInfo.avatar = url;
       }
     }
     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -68,8 +70,6 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
             builder.room = urlString;
             builder.userInfo = _userInfo;
             builder.audioOnly = YES;
-            builder.welcomePageEnabled = NO;
-           [builder setFeatureFlag:@"recording.enabled" withBoolean:NO];
         }];
         [jitsiMeetView join:options];
     });

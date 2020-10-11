@@ -58,16 +58,13 @@ function App() {
         }}>
         <Text style={s.text}>OPERATION ROTATE</Text>
       </TouchableOpacity>
-      {/* {isLoading && ( */}
+      
       <JitsiMeetView
-        // onConferenceTerminated={e => onConferenceTerminated(e)}
-        // onConferenceJoined={e => onConferenceJoined(e)}
-        // onConferenceWillJoin={e => onConferenceWillJoin(e)}
+        onConferenceTerminated={e => onConferenceTerminated(e)}
+        onConferenceJoined={e => onConferenceJoined(e)}
+        onConferenceWillJoin={e => onConferenceWillJoin(e)}
         style={s.meet}
       />
-      {/* )} */}
-
-      {/* <UIView style={s.meet} /> */}
     </View>
   );
 }
@@ -83,7 +80,7 @@ const s = StyleSheet.create({
   },
   meet: {
     backgroundColor: 'black',
-    height: '90%',
+    height: '40%',
   },
   contentMeet: {
     backgroundColor: 'yellow',
