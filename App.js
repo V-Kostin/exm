@@ -43,6 +43,8 @@ function App() {
     console.log(nativeEvent);
   }
 
+  
+
   return (
     <View style={s.view}>
       <Text style={s.text}>jitsi</Text>
