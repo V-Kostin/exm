@@ -8,11 +8,11 @@ function App() {
   const [rotate, setRotate] = useState('PORTRAIT');
   useEffect(() => {
     // setTimeout(() => {
-    const url = 'https://meet.jit.si/exemple';
+    const url = 'https://meet.nativetalk.co/sads';
     const userInfo = {
-      displayName: 'itsME',
+      displayName: 'name',
       email: 'user@example.com',
-      avatar: 'https:/gravatar.com/avatar/abc123',
+      avatar: 'https://lh3.googleusercontent.com/proxy/aXh6SsfSf6sQ7xgltmQoAa3r3DxDx8dryrTfsHiXLz5fCcp_iRWRK6B4NOZuuDW6Lt2JM5aFE3SNuCaQ7NT-3xKTNUiTEAgt9hJpSG3rHvOO3KpdIjw6bQ',
     };
     JitsiMeet.call(url, userInfo);
     /* Você também pode usar o JitsiMeet.audioCall (url) para chamadas apenas de áudio */
@@ -74,7 +74,7 @@ function App() {
 const s = StyleSheet.create({
   view: {
     padding: 20,
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     flex: 1,
   },
   text: {
@@ -82,7 +82,7 @@ const s = StyleSheet.create({
   },
   meet: {
     backgroundColor: 'black',
-    height: '40%',
+    height: '90%',
   },
   contentMeet: {
     backgroundColor: 'yellow',
