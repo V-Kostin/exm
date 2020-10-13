@@ -100,22 +100,20 @@ function App() {
     console.log(nativeEvent);
   }
 
-  const ButtonRotation = () => {
-    return (
-      <TouchableOpacity
-        onPress={() => {
-          if (rotate === 'PORTRAIT') {
-            Orientation.lockToLandscape();
-            setRotate('LANDSCAPE');
-          } else {
-            Orientation.lockToPortrait();
-            setRotate('PORTRAIT');
-          }
-        }}>
-        <SquareForRotation />
-      </TouchableOpacity>
-    );
-  };
+  const ButtonRotation = () => (
+    <TouchableOpacity
+      onPress={() => {
+        if (rotate === 'PORTRAIT') {
+          Orientation.lockToLandscape();
+          setRotate('LANDSCAPE');
+        } else {
+          Orientation.lockToPortrait();
+          setRotate('PORTRAIT');
+        }
+      }}>
+      <SquareForRotation />
+    </TouchableOpacity>
+  );
 
   const currentRotation =
     rotate === 'PORTRAIT' ? s.meet : [s.meet, s.landscapeHeight];
