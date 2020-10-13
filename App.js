@@ -47,7 +47,6 @@ function App() {
 
   return (
     <View style={s.view}>
-      <Text style={s.text}>jitsi</Text>
       <TouchableOpacity
         onPress={() => {
           if (rotate === 'PORTRAIT') {
@@ -60,7 +59,6 @@ function App() {
         }}>
         <Text style={s.text}>OPERATION ROTATE</Text>
       </TouchableOpacity>
-      
       <JitsiMeetView
         onConferenceTerminated={e => onConferenceTerminated(e)}
         onConferenceJoined={e => onConferenceJoined(e)}
@@ -73,7 +71,6 @@ function App() {
 
 const s = StyleSheet.create({
   view: {
-    padding: 20,
     backgroundColor: 'black',
     flex: 1,
   },
@@ -82,6 +79,7 @@ const s = StyleSheet.create({
   },
   meet: {
     backgroundColor: 'black',
+    width: '100%',
     height: '90%',
   },
   contentMeet: {

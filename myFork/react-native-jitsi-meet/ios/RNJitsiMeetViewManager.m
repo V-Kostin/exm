@@ -44,6 +44,7 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
         JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
             builder.room = urlString;
             builder.userInfo = _userInfo;
+            [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"add-people.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"meeting-name.enabled" withBoolean:NO];
@@ -51,15 +52,16 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
             [builder setFeatureFlag:@"closedcaption.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"invite.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"ios.recording.enabled" withBoolean:NO];
-            [builder setFeatureFlag:@"kickout.enabled" withBoolean:NO];
+            [builder setFeatureFlag:@"kick-out.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"live-streaming.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"meeting-password.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"tile-view.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"recording.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"videoshare.enabled" withBoolean:NO];
-            [builder setFeatureFlag:@"conferencetimer.enabled" withBoolean:YES];
+            [builder setFeatureFlag:@"conference-timer.enabled" withBoolean:YES];
             [builder setFeatureFlag:@"welcomepage.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"infodialog.enabled" withBoolean:NO];
+            [builder setFeatureFlag:@"toolbox.alwaysVisible" withBoolean:NO];
         }];
         [jitsiMeetView join:options];
     });
@@ -85,6 +87,7 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
         JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
             builder.room = urlString;
             builder.userInfo = _userInfo;
+            [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"add-people.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"meeting-name.enabled" withBoolean:NO];
@@ -92,15 +95,16 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
             [builder setFeatureFlag:@"closedcaption.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"invite.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"ios.recording.enabled" withBoolean:NO];
-            [builder setFeatureFlag:@"kickout.enabled" withBoolean:NO];
+            [builder setFeatureFlag:@"kick-out.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"live-streaming.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"meeting-password.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"tile-view.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"recording.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"videoshare.enabled" withBoolean:NO];
-            [builder setFeatureFlag:@"conferencetimer.enabled" withBoolean:YES];
+            [builder setFeatureFlag:@"conference-timer.enabled" withBoolean:YES];
             [builder setFeatureFlag:@"welcomepage.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"infodialog.enabled" withBoolean:NO];
+            [builder setFeatureFlag:@"toolbox.alwaysVisible" withBoolean:NO];
         }];
         [jitsiMeetView join:options];
     });
