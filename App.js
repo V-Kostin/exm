@@ -69,7 +69,7 @@ const s = StyleSheet.create({
 function App() {
   const [rotate, setRotate] = useState('PORTRAIT');
   useEffect(() => {
-    const url = 'https://meet.nativetalk.co/sads';
+    const url = 'https://meet.nativetalk.co/sadss';
     const userInfo = {
       displayName: 'name',
       email: 'user@example.com',
