@@ -44,6 +44,8 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
         JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
             builder.room = urlString;
             builder.userInfo = _userInfo;
+            builder.audioMuted = YES;
+            builder.videoMuted = YES;
             [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"add-people.enabled" withBoolean:NO];
@@ -86,6 +88,8 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
         JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
             builder.room = urlString;
             builder.userInfo = _userInfo;
+            builder.audioMuted = YES;
+            builder.videoMuted = YES;
             [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"add-people.enabled" withBoolean:NO];
